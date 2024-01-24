@@ -61,7 +61,7 @@ public class Test
 
     public void AddQuestionToTest()
     {
-        System.Console.WriteLine("Choose the type for this question:\n1. Text answer question;\n2. One right variant question;\n3. Some right variants question;\n");
+        System.Console.WriteLine("Choose the type for this question:\n1. Text answer question;\n2. One right variant question;\n3. Some right variants question\n4. Scale question\n5.Matching Question");
         string type = Console.ReadLine();
         QuestionCreator creator;
         IQuestion questionInTest;
@@ -77,6 +77,14 @@ public class Test
                 break;
             case "3":
                 creator = new MultipleChoiseQuestionCreator();
+                questionInTest = creator.FactoryMethod();
+                break;
+            case "4":
+                creator = new ScaleQuestionCreator();
+                questionInTest = creator.FactoryMethod();
+                break;
+            case "5":
+                creator = new MatchingQuestionСreator();
                 questionInTest = creator.FactoryMethod();
                 break;
             default:
@@ -130,7 +138,7 @@ public class Test
         int num2 = Convert.ToInt32(Console.ReadLine());
         if (num2 == 1)
         {
-            System.Console.WriteLine("Choose the type for this question: \n1.Text answer question;\n2. One right variant question;\n3. Some right variants question\n");
+            System.Console.WriteLine("Choose the type for this question: \n1.Text answer question;\n2. One right variant question;\n3. Some right variants question\n4. Scale question\n5.Matching Question");
             string type = Console.ReadLine();
             QuestionCreator creator;
             switch (type)
@@ -145,6 +153,14 @@ public class Test
                     break;
                 case "3":
                     creator = new MultipleChoiseQuestionCreator();
+                    QuestionsArr[numOfQ - 1] = creator.FactoryMethod();
+                    break;
+                case "4":
+                    creator = new ScaleQuestionCreator();
+                    QuestionsArr[numOfQ - 1] = creator.FactoryMethod();
+                    break;
+                case "5":
+                    creator = new MatchingQuestionСreator();
                     QuestionsArr[numOfQ - 1] = creator.FactoryMethod();
                     break;
                 default:

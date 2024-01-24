@@ -41,6 +41,20 @@ namespace CourseWork_OOP_Testing.QuestionFactory
             return new OpenAnswerQuestion();
         }
     }
+    class ScaleQuestionCreator : QuestionCreator
+    {
+        public override IQuestion FactoryMethod()
+        {
+            return new ScaleQuestion();
+        }
+    }
+    class MatchingQuestionСreator : QuestionCreator
+    {
+        public override IQuestion FactoryMethod()
+        {
+            return new MatchingQuestion();
+        }
+    }
 
     class DefaultQuestionCreator : QuestionCreator
     {
